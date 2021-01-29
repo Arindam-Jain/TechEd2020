@@ -27,7 +27,7 @@
                         <grid:GridBoxLayout/>
                     </f:customLayout>
                     <f:items>
-                        <CustomListItem type="Active">
+                        <CustomListItem type="Active" press=".navToSensorStatus">
                             <Title text="{sensorModel>location}"/>
                             <layoutData>
                                 <FlexItemData growFactor="1" shrinkFactor="0"/>

@@ -75,6 +75,11 @@ sap.ui.define([
                 oBinding.filter([oFilter]);
             },
 
+            navToSensorStatus: function(oEvent) {
+                var iSensorIndex = oEvent.getSource().getBindingContext("sensorModel").getProperty("index");
+                this.getOwnerComponent().getRouter().navTo("RouteSensorStatus", {index: iSensorIndex});
+            },
+
             onCustomerSelectConfirm: function(oEvent) {
                 var aSelectedItems = oEvent.getParameter("selectedItems");
                 var oBinding = this.getView().byId("sensorsList").getBinding("items");
@@ -83,7 +88,7 @@ sap.ui.define([
                 });
                 oBinding.filter(this._aCustomerFilters.concat(this._aStatusFilters));
             },
-
+            
             getSensorModel: function(){
                 return this.getOwnerComponent().getModel("sensorModel");
             }

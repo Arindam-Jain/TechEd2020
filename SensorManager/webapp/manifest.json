@@ -94,12 +94,21 @@
              "routes": [{
                 "name": "RouteSensors",
                 "pattern": "",
-                "target": ["TargetSensors"]
-            }],
-            "targets": {
-                "TargetSensors": {
-                    "viewId": "Sensors",
-                    "viewName": "Sensors"
+                "target": ["TargetSensors"]},
+                {
+                "name": "RouteSensorStatus",
+                "pattern": "sensor/{index}",
+                "target": ["TargetSensorStatus"]}
+                ],
+                "targets": {
+                    "TargetSensors": {
+                        "viewId": "Sensors",
+                        "viewName": "Sensors"
+                },
+                    "TargetSensorStatus": {
+                        "viewId": "sensorStatus",
+                        "viewName": "SensorStatus",
+                        "viewLevel": 2
                 }
             }
         }
